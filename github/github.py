@@ -1,12 +1,15 @@
 #
 class github(object):
-    def __init__(self,app_id,app_secret,redirect_uri):
-        self.access_token=''
+    def __init__(self,app_id,app_secret,redirect_uri,access_token=None):
         self.app_id=app_id
         self.app_secret=app_secret
         self.redirect_uri=redirect_uri
         self.host='https://github.com/login/oauth/'
         self.host1='https://api.github.com/'
+        if access_token:
+            self.access_token=access_token
+        else:
+            self.access_token=''
         
     
     def authorize(self):
