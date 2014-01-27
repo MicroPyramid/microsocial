@@ -1,3 +1,7 @@
+import json
+import urllib
+import requests
+
 class stackoverflow(object):
     def __init__(self,app_id,app_secret,app_key,redirect_uri,access_token=None):
         self.app_id=app_id
