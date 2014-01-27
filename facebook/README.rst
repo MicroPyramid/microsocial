@@ -30,6 +30,8 @@ To get pages in facebook
     from facebook import fb.py
     pages=get_fbpages(accesstoken)
     
+pages contains the list of pages which current user is an admin 
+    
     
 To get groups in facebook
 ------------------------------------------------------------------
@@ -39,6 +41,8 @@ To get groups in facebook
     from facebook import fb.py
     groups=get_fbgroups(accesstoken)
     
+groups contains list of groups which current user as a member in that.
+    
 
 To post on a page
 -----------------------------------------------------------------
@@ -47,6 +51,8 @@ To post on a page
 
     from facebook import fb.py
     postdata=post_on_page(pageid,pageaccesstoken,link,desc,msg,name,photourl,actionname,actionurl)
+    
+If the post successfully posted on page then postdata contains postid.
 
 
 To post on a group
@@ -56,6 +62,8 @@ To post on a group
 
     from facebook import fb.py
     postdata=post_on_group(groupid,accesstoken,link,desc,msg,name,photourl,actionname,actionurl)
+    
+If the post successfully posted on group then postdata contains postid.
     
 
     
