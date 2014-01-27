@@ -1,7 +1,7 @@
 Usage
 =====
 
-First create Github app then send request to authorize app.Github redirects the user back to your website's URL after granting access (giving proper permissions) to your application. We call that url **RETURN URL**. Assuming your return url is **http://localhost:8000**, you can write something like this:
+First create Github app then send request to authorize app.Github redirects the user back to your website's URL after granting access (giving proper permissions) to your application. We call that url **RETURN URL**.
 
 .. code-block:: python
 
