@@ -25,8 +25,8 @@ For debugging purposes you can use the credentials below. It belongs to my test 
 
 .. code-block:: python
 
-    KEY = 'wFNJekVpDCJtRPFX812pQsJee-gt0zO4X5XmG6wcfSOSlLocxodAXNMbl0_hw3Vl'
-    SECRET = 'daJDa6_8UcnGMw1yuq9TjoO_PMKukXMo8vEMo7Qv5J-G3SPgrAV0FqFCd0TNjQyG'
+    KEY = 'your app key'
+    SECRET = 'your app secret'
 
 
 LinkedIn redirects the user back to your website's URL after granting access (giving proper permissions) to your application. We call that url **RETURN URL**. Assuming your return url is **http://localhost:8000**, you can write something like this:
@@ -35,9 +35,9 @@ LinkedIn redirects the user back to your website's URL after granting access (gi
 
     from linkedin import linkedin
 
-    API_KEY = "wFNJekVpDCJtRPFX812pQsJee-gt0zO4X5XmG6wcfSOSlLocxodAXNMbl0_hw3Vl"
-    API_SECRET = "daJDa6_8UcnGMw1yuq9TjoO_PMKukXMo8vEMo7Qv5J-G3SPgrAV0FqFCd0TNjQyG"
-    RETURN_URL = "http://localhost:8000"
+    API_KEY = "your app key"
+    API_SECRET = "your app secret"
+    RETURN_URL = "redirect url"
     authentication = linkedin.LinkedInAuthentication(API_KEY, API_SECRET, RETURN_URL, linkedin.PERMISSIONS.enums.values())
     print authentication.authorization_url
     application = linkedin.LinkedInApplication(authentication)
@@ -46,7 +46,7 @@ When you grant access to the application, you will be redirected to the return u
 
 .. code-block:: python
 
-    "http://localhost:8000/?code=AQTXrv3Pe1iWS0EQvLg0NJA8ju_XuiadXACqHennhWih7iRyDSzAm5jaf3R7I8&state=ea34a04b91c72863c82878d2b8f1836c"
+    "RETURN_URL/?code=AQTXrv3Pe1iWS0EQvLg0NJA8ju_XuiadXACqHennhWih7iRyDSzAm5jaf3R7I8&state=ea34a04b91c72863c82878d2b8f1836c"
 
 
 This means that the value of the **authorization_code** is **AQTXrv3Pe1iWS0EQvLg0NJA8ju_XuiadXACqHennhWih7iRyDSzAm5jaf3R7I8**. After setting it by hand, we can call the **.get_access_token()** to get the actual token.
