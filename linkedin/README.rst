@@ -90,6 +90,7 @@ The Connections API returns a list of **1st degree** connections for a user who 
 To fetch your connections, you simply call **.get_connections()** method with proper GET querystring:
 
 .. code-block:: python
+
     application.get_connections()
     application.get_connections(selectors=['headline', 'first-name', 'last-name'], params={'start':10, 'count':5})
 
@@ -103,6 +104,7 @@ The People Search API returns information about people. It lets you implement mo
 You can get more information from [here](http://developers.linkedin.com/documents/people-search-api).
 
 .. code-block:: python
+
      application.search_profile(selectors=[{'people': ['first-name', 'last-name']}], params={'keywords': 'apple microsoft'})
      # Search URL is https://api.linkedin.com/v1/people-search:(people:(first-name,last-name))?keywords=apple%20microsoft
 
@@ -110,6 +112,7 @@ You can get more information from [here](http://developers.linkedin.com/document
 The Company Search API enables search across company pages. You can get more information from [here](http://developers.linkedin.com/documents/company-search).
 
 .. code-block:: python
+
      application.search_company(selectors=[{'companies': ['name', 'universal-name', 'website-url']}], params={'keywords': 'apple microsoft'})
      # Search URL is https://api.linkedin.com/v1/company-search:(companies:(name,universal-name,website-url))?keywords=apple%20microsoft
 
@@ -117,6 +120,7 @@ The Company Search API enables search across company pages. You can get more inf
 The Job Search API enables search across LinkedIn's job postings. You can get more information from [here](http://developers.linkedin.com/documents/job-search-api).
 
 .. code-block:: python
+
     application.search_job(selectors=[{'jobs': ['id', 'customer-job-code', 'posting-date']}], params={'title': 'python', 'count': 2})
 
 
@@ -126,6 +130,7 @@ Group API
 The Groups API provides rich access to read and interact with LinkedIn’s groups functionality. You can get more information from [here](http://developers.linkedin.com/documents/groups-api). By the help of the interface, you can fetch group details, get your group memberships as well as your posts for a specific group which you are a member of.
 
 .. code-block:: python
+
     application.get_group(41001)
     application.get_memberships(params={'count': 20})
     application.get_posts(41001)
@@ -133,6 +138,7 @@ The Groups API provides rich access to read and interact with LinkedIn’s group
 You can also submit a new post into a specific group.
 
 .. code-block:: python
+
     title = 'your title'
     summary = 'your summary'
     submitted_url = 'url to submit'
@@ -152,15 +158,16 @@ The Company API:
 You can query a company with either its **ID** or **Universal Name**. For more information, you can check out the documentation [here](http://developers.linkedin.com/documents/company-lookup-api-and-fields).
 
 .. code-block:: python
+
     application.get_companies(company_ids=[1035], universal_names=['apple'], selectors=['name'], params={'is-company-admin': 'true'})
-    
-    # Get the latest updates about Microsoft
+    #Get the latest updates about Microsoft
     application.get_company_updates(1035, params={'count': 2})
 
 
 You can follow or unfollow a specific company as well.
 
 .. code-block:: python
+
     application.follow_company(1035)
     True
 
@@ -174,12 +181,14 @@ Job API
 The Jobs APIs provide access to view jobs and job data. You can get more information from its [documentation](http://developers.linkedin.com/documents/job-lookup-api-and-fields).
 
 .. code-block:: python
+
     application.get_job(job_id=5174636)
     
 You can also fetch you job bookmarks.
 
 .. code-block:: python
-application.get_job_bookmarks()
+    
+    application.get_job_bookmarks()
 
 
 Share API
@@ -188,9 +197,8 @@ Share API
 Network updates serve as one of the core experiences on LinkedIn, giving users the ability to share rich content to their professional network. You can get more information from [here](http://developers.linkedin.com/documents/share-api).
 
 .. code-block:: python
-application.submit_share('Posting from the API using JSON', 'A title for your share', None, 'http://www.linkedin.com', 'http://d.pr/3OWS')
-{'updateKey': u'UNIU-8219502-5705061301949063168-SHARE'
- 'updateURL': 'http://www.linkedin.com/updates?discuss=&amp;scope=8219502&amp;stype=M&amp;topic=5705061301949063168&amp;type=U&amp;a=aovi'}
+    
+    application.submit_share('Posting from the API using JSON', 'A title for your share', None, 'http://www.linkedin.com', 'http://d.pr/3OWS')
 
 
 Network API
@@ -201,6 +209,7 @@ The Get Network Updates API returns the users network updates, which is the Link
 There are many network update types. You can look at them by importing **NETWORK_UPDATES** enumeration.
 
 .. code-block:: python
+
     from linkedin.linkedin import NETWORK_UPDATES
     print NETWORK_UPDATES.enums
     update_types = (NETWORK_UPDATES.CONNECTION, NETWORK_UPDATES.PICTURE)
@@ -213,6 +222,7 @@ Invitation API
 The Invitation API allows your users to invite people they find in your application to their LinkedIn network. You can get more information from [here](http://developers.linkedin.com/documents/invitation-api).
 
 .. code-block:: python
+
     from linkedin.models import LinkedInRecipient, LinkedInInvitation
     recipient = LinkedInRecipient(None, 'john.doe@python.org', 'John', 'Doe')
     print recipient.json
