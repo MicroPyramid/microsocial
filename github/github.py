@@ -1,4 +1,8 @@
 #
+import json
+import urllib
+import requests
+
 class github(object):
     def __init__(self,app_id,app_secret,redirect_uri,access_token=None):
         self.app_id=app_id
