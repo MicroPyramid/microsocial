@@ -1,4 +1,9 @@
 #
+import json
+import urllib
+import requests
+import gdata.contacts.client
+
 class google(object):
     def __init__(self,app_id,app_secret,redirect_uri,access_token=None):
         self.app_id=app_id
