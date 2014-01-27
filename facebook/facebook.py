@@ -1,5 +1,6 @@
 import requests
 import json
+import urllib
 
 def get_fbpages(accesstoken):
   u=requests.get("https://graph.facebook.com/me/accounts",params={'access_token':accesstoken})
