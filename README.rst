@@ -11,3 +11,8 @@ Collection of Social APIs (Facebbok, Twitter, Linkedin, GitHub
 .. image:: https://landscape.io/github/MicroPyramid/microsocial/master/landscape.svg?style=flat
    :target: https://landscape.io/github/MicroPyramid/microsocial/master
    :alt: Code Health
+
+
+For additional help you can `Contact us here`_
+
+.. _contact us here: https://micropyramid.com/contact-us/
