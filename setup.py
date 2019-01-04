@@ -10,7 +10,7 @@ if sys.argv[-1] == 'publish':
 setup(
       name='microsocial',
       version='0.0.2',
-      install_requires=['requests==2.0.0', 'requests_oauthlib==0.3.2'],
+      install_requires=['requests==2.20.0', 'requests_oauthlib==0.3.2'],
       description='microsocial is collection of social apis for python. It supports authentication, posting, sharing etc.',
       author='MicroPyramid',
       author_email='MicroPyramid@googlegroups.com',
